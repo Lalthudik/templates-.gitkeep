@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JMJ Enterprise | India</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<div class="top">
+  <div class="top-brand"><b>JMJ Enterprise</b><span>India-only online store for home, garden and living products.</span><small>Payments: UPI, Cards, Net Banking and Cash on Delivery.</small></div>
+  <div class="top-contact"><b>Head Quarter</b><span>14 Thangboipunji, Jiribam<br>Manipur 79516</span></div>
+  <div class="top-contact"><b>Branch Head Office</b><span>130A Kranti Chowk, Munirka<br>New Delhi 10067</span></div>
+  <div class="top-contact"><b>Customer Support</b><span><a href="mailto:canikissyou97@hotmail.com">canikissyou97@hotmail.com</a><br><a href="tel:+918974605808">8974605808</a></span></div>
+</div>
+<header><a class="brand" href="/">JMJ <small>ENTERPRISE</small></a>
+<form class="search"><input name="q" placeholder="Search products..." value="{{q}}"><button>Search</button></form>
+<a class="cart" href="/cart">🛒 Basket <b>{{cart_count}}</b></a></header>
+<nav><a href="/">Home</a><a>Furniture</a><a>Garden</a><a>Outdoor</a><a>Kids & Baby</a><a>Home & Living</a><a>Offers</a></nav>
+<a class="hero hero-banner" href="#products" aria-label="Shop JMJ Enterprise sofa collection"><img src="/static/jmj_frontpage_latest.png" alt="JMJ Enterprise colourful striped sofa promotion" loading="eager"></a>
+<main id="products"><div class="heading"><h2>Featured Products</h2><span>{{products|length}} products</span></div>
+<div class="grid">{% for p in products %}<article><img src="{{p[4]}}"><div class="body"><h3>{{p[1]}}</h3><div class="stars">★★★★★</div><div class="price">₹{{"{:,}".format(p[2])}}</div><button onclick="add({{p[0]}},'{{p[1]}}')">Add to Basket</button></div></article>{% else %}<p>No products found.</p>{% endfor %}</div></main>
+<footer><div class="footer-inner"><div><b>JMJ Enterprise</b><p>India-only online store for home, garden and living products.</p><p>Payments: UPI, Cards, Net Banking and Cash on Delivery.</p></div><div><b>Head Quarter</b><p>14 Thangboipunji, Jiribam<br>Manipur 79516</p></div><div><b>Branch Head Office</b><p>130A Kranti Chowk, Munirka<br>New Delhi 10067</p></div><div><b>Customer Support</b><p><a href="mailto:canikissyou97@hotmail.com">canikissyou97@hotmail.com</a><br><a href="tel:+918974605808">8974605808</a></p></div></div></footer>
+<div id="toast"></div><script>
+async function add(id,name){let r=await fetch('/cart/add/'+id,{method:'POST'});let d=await r.json();document.querySelector('.cart b').textContent=d.count;toast(name+' added to basket')}
+function toast(x){let t=document.getElementById('toast');t.textContent=x;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
+</script></body></html>
