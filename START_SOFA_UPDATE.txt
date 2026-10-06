@@ -1,0 +1,6 @@
+JMJ ENTERPRISE - SOFA BANNER UPDATE
+
+The homepage hero banner has been updated with the new striped sofa design.
+The banner is stored locally in static/jmj_sofa_banner.png and is clickable to the Featured Products section.
+
+Start the website with START_JMJ_ENTERPRISE.bat.

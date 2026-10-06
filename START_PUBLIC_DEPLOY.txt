@@ -1,0 +1,19 @@
+JMJ ENTERPRISE — STAGING DEPLOYMENT
+
+This build is ready for online staging/testing.
+
+Render settings:
+Build Command: pip install -r requirements.txt
+Start Command: gunicorn app:app --workers 2 --timeout 120
+Health Check: /health
+
+Environment variables:
+SECRET_KEY = generate a strong random value (Render can generate it automatically)
+ADMIN_PASSWORD = set a strong admin password if /admin/orders is required
+COOKIE_SECURE = 1
+
+IMPORTANT:
+- The current order database is SQLite and is suitable for local/staging tests only.
+- For permanent production orders, migrate the order database to PostgreSQL before launch.
+- UPI/Card/Net Banking selections are currently recorded as payment status only; they are NOT a live payment gateway.
+- Do not publish as the final production store until real payment processing and a persistent database are configured.

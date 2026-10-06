@@ -1,0 +1,11 @@
+JMJ ENTERPRISE - FINAL VIEW PACKAGE
+
+1. Extract this ZIP.
+2. Double-click START_JMJ_ENTERPRISE.bat.
+3. Wait for: Running on http://127.0.0.1:5000
+4. Open Chrome and visit: http://127.0.0.1:5000
+5. If an older design appears, press Ctrl+F5.
+
+This package uses the latest colourful woven-textile front-page design, a full textile page background, high-contrast overlays, and readable white/black content panels across the cart, checkout, order confirmation and orders pages.
+
+Note: UPI/Card/Net Banking selection is currently recorded as pending; a live payment gateway is still required before accepting real online payments.
